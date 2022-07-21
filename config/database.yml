@@ -24,6 +24,9 @@ default: &default
 development:
   <<: *default
   database: clinic_development
+  host: localhost
+  username: postgres
+  password: MyPassword
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -82,5 +85,8 @@ test:
 production:
   <<: *default
   database: clinic_production
-  username: clinic
-  password: <%= ENV["CLINIC_DATABASE_PASSWORD"] %>
+  host: localhost
+  username: postgres
+  password: <%= ENV["WALLET_PASSWORD"] %>
+  # username: clinic
+  # password: <%= ENV["CLINIC_DATABASE_PASSWORD"] %>
