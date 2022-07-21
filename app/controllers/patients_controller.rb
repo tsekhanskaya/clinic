@@ -26,7 +26,9 @@ class PatientsController < ApplicationController
 
   # PATCH/PUT /patients/1
   def update
-    if @patient.update(patient_params)
+
+    @patient.assign_attributes(patient_params)
+    if @patient.save  #update(patient_params)
       render json: @patient
     else
       render json: @patient.errors, status: :unprocessable_entity
