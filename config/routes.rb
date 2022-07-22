@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :medical_reports
   resources :diseases
   resources :employees
   resources :positions

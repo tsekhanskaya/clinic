@@ -1,3 +1,3 @@
 class Position < ApplicationRecord
-  has_many :employee
+  has_one :employee
 end
