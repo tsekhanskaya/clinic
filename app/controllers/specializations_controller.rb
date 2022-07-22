@@ -26,12 +26,24 @@ class SpecializationsController < ApplicationController
 
   # PATCH/PUT /specializations/1
   def update
-    if @specialization.update(specialization_params)
+    @specialization.assign_attributes(specialization_params)
+
+    if @specialization.save 
       render json: @specialization
     else
       render json: @specialization.errors, status: :unprocessable_entity
     end
   end
+
+  # def update
+  #   @position.assign_attributes(position_params)
+  #
+  #   if @position.save
+  #     render json: @position
+  #   else
+  #     render json: @position.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /specializations/1
   def destroy

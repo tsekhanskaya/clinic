@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :positions
-  resources :specializations
   resources :patients
+
+  resources :specializations
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

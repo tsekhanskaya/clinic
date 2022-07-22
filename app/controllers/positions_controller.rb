@@ -28,12 +28,13 @@ class PositionsController < ApplicationController
   def update
     @position.assign_attributes(position_params)
 
-    if @position.save(position_params)
+    if @position.save
       render json: @position
     else
       render json: @position.errors, status: :unprocessable_entity
     end
   end
+
 
   # DELETE /positions/1
   def destroy
