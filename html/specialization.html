@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Специализация</title>
+    <!-- сначала выполнится jQuery -->
+    <!-- отложенная загрузка библиотеки jQuery -->
+  <script defer src="https://code.jquery.com/jquery-3.6.0.js"
+          integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+          crossorigin="anonymous"></script>
+  <!-- после jQuery свой скрипт, зависящий от jQuery -->
+  <script src="script.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Специализация:</h1>
+    <p>Внесите данные для добавления, обновления или удаления.</p>
+    <form>
+      <label for="fname">Наименование специализации:</label><br>
+      <input type="text" id="fname" name="fname"><br><br>
+      <input type="submit" value="Добавить">
+      <input type="submit" value="Обновить">
+      <input type="submit" value="Удалить"><br><br>
+    </form>
+    <input type="submit" value="Показать всё">
+  </body>
+</html>
