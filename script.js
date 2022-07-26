@@ -1,0 +1,1 @@
+button = doctype.createElement('BUTTON')
