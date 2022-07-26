@@ -14,13 +14,19 @@
   <body>
     <h1>Специализация:</h1>
     <p>Внесите данные для добавления, обновления или удаления.</p>
+
     <form>
-      <label for="fname">Наименование специализации:</label><br>
-      <input type="text" id="fname" name="fname"><br><br>
-      <input type="submit" value="Добавить">
-      <input type="submit" value="Обновить">
-      <input type="submit" value="Удалить"><br><br>
+      <label for="specialization_id">Идентификатор сотрудника:</label><br>
+      <input type="text" id="specialization_id" name="specialization_id" placeholder="1"><br><br>
+
+      <label for="specialization_name">Наименование специализации:</label><br>
+      <input type="text" id="specialization_name" name="specialization_name" placeholder="Врач общей практики"><br><br>
+
+      <button id="add_specialization" name = "add_specialization" onclick="addSpecialization()">Добавить</button>
+      <button id="update_specialization" name = "update_specialization" onclick="updateSpecialization()">Обновить</button>
+      <button id="delete_specialization" name = "delete_specialization" onclick="deleteSpecialization()">Удалить</button><br><br>
     </form>
-    <input type="submit" value="Показать всё">
+
+    <button id="show_specializations" onclick="showSpecializations()">Показать всё</button>
   </body>
 </html>

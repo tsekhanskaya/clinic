@@ -15,29 +15,33 @@
 
     <h1>Пациент</h1>
     <p>Внесите данные для добавления, обновления или удаления.</p>
+    <p>* Идентификатор пациента при добавлении создается автоматически.</p>
     <form>
-      <label for="fname">Фамилия:</label><br>
-      <input type="text" id="fname" name="fname"><br><br>
+      <label for="patient_id">Идентификатор пациента:</label><br>
+      <input type="text" id="patient_id" name="patient_id" placeholder="1"><br><br>
 
-      <label for="fname">Имя:</label><br>
-      <input type="text" id="fname" name="fname"><br><br>
+      <label for="patient_lastname">Фамилия:</label><br>
+      <input type="text" id="patient_lastname" name="patient_lastname" placeholder="Цеханский"><br><br>
 
-      <label for="fname">Отчество:</label><br>
-      <input type="text" id="fname" name="fname"><br><br>
+      <label for="patient_firstname">Имя:</label><br>
+      <input type="text" id="patient_firstname" name="patient_firstname" placeholder="Владимир"><br><br>
 
-      <label for="fname">Дата рожения:</label><br>
-      <input type="text" id="fname" name="fname"><br><br>
+      <label for="patient_patronymic">Отчество:</label><br>
+      <input type="text" id="patient_patronymic" name="patient_patronymic" placeholder="Станиславович"><br><br>
+
+      <label for="patient_birthdate">Дата рожения:</label><br>
+      <input type="date" id="patient_birthdate" name="patient_birthdate"/><br><br>
 
       <label for="fname">Телефон:</label><br>
-      <input type="text" id="fname" name="fname"><br><br>
+      <input type="text" id="fname" name="fname" placeholder="+375 (29) 123-23-34"><br><br>
 
 
-      <input type="submit" value="Добавить">
-      <input type="submit" value="Обновить">
-      <input type="submit" value="Удалить"><br><br>
+      <button id="add_patient" name = "add_patient" onclick="addPatient()">Добавить</button>
+      <button id="update_patient" name = "update_patient" onclick="updatePatient()">Обновить</button>
+      <button id="delete_patient" name = "delete_patient" onclick="deletePatient()">Удалить</button><br><br>
     </form>
 
-    <input type="submit" value="Показать всё">
+    <button id="show_patients" name ="show_patients" onclick="showPatients()">Показать всё</button>
 
   </body>
 </html>
