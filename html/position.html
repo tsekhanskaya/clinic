@@ -14,14 +14,23 @@
   <body>
     <h1>Должность:</h1>
     <p>Внесите данные для добавления, обновления или удаления.</p>
-    <form>
-      <label for="position">Наименование должности:</label><br>
-      <input type="text" id="position" name="position" placeholder="Заведующий отделением"><br><br>
-      <input type="submit" value="Добавить">
-      <input type="submit" value="Обновить">
-      <input type="submit" value="Удалить"><br><br>
-    </form>
-    <input type="submit" value="Показать всё">
 
+    <form>
+      <br>
+      <label for="position_id">Идентификатор должности:</label><br>
+      <input type="text" id="position_id" name="position_id" placeholder="1"><br><br>
+
+      <label for="position_name">Наименование должности:</label><br>
+      <input type="text" id="position_name" name="position_name" placeholder="Заведующий отделением"><br><br>
+
+      <button id="add_position" name = "add_position" onclick="addPosition()">Добавить *</button>
+      <button id="update_position" name = "update_position" onclick="updatePosition()">Обновить **</button>
+      <button id="delete_position" name = "delete_position" onclick="deletePosition()">Удалить **</button><br><br>
+    </form>
+
+    <button id="show_positions" onclick="showPositions()">Показать все должности</button><br><br>
+
+    <p>* Идентификатор должности при добавлении создается автоматически.</p>
+    <p>** Обновление и удаление происходит по идентификатору должности.</p>
   </body>
 </html>
