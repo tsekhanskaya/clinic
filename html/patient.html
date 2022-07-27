@@ -15,7 +15,6 @@
 
     <h1>Пациент</h1>
     <p>Внесите данные для добавления, обновления или удаления.</p>
-    <p>* Идентификатор пациента при добавлении создается автоматически.</p>
     <form>
       <label for="patient_id">Идентификатор пациента:</label><br>
       <input type="text" id="patient_id" name="patient_id" placeholder="1"><br><br>
@@ -36,12 +35,15 @@
       <input type="text" id="fname" name="fname" placeholder="+375 (29) 123-23-34"><br><br>
 
 
-      <button id="add_patient" name = "add_patient" onclick="addPatient()">Добавить</button>
-      <button id="update_patient" name = "update_patient" onclick="updatePatient()">Обновить</button>
-      <button id="delete_patient" name = "delete_patient" onclick="deletePatient()">Удалить</button><br><br>
+      <button id="add_patient" name = "add_patient" onclick="addPatient()">Добавить*</button>
+      <button id="update_patient" name = "update_patient" onclick="updatePatient()">Обновить**</button>
+      <button id="delete_patient" name = "delete_patient" onclick="deletePatient()">Удалить**</button><br><br>
     </form>
 
     <button id="show_patients" name ="show_patients" onclick="showPatients()">Показать всё</button>
+
+    <p>* Идентификатор должности при добавлении создается автоматически.</p>
+    <p>** Обновление и удаление происходит по идентификатору должности.</p>
 
   </body>
 </html>
