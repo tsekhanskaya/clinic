@@ -12,21 +12,27 @@
   <script src="script.js" charset="utf-8"></script>
   </head>
   <body>
-    <h1>Диагнозы</h1>
+    <h1>Диагноз:</h1>
     <p>Внесите данные для добавления, обновления или удаления.</p>
     <form>
+      <label for="disease_id">Идентификатор диагноза:</label><br>
+      <input type="text" id="disease_id" name="disease_id" placeholder="1"><br><br>
+
       <label for="disease_code">Код диагноза:</label><br>
       <input type="text" id="disease_code" name="disease_code" placeholder="J06.0"><br><br>
 
-      <label for="disease_name">Имя диагноза:</label><br>
+      <label for="disease_name">Название диагноза:</label><br>
       <input type="text" id="disease_name" name="disease_name" placeholder="Острый ларингофарингит"><br><br>
 
-      <input type="submit" value="Добавить">
-      <input type="submit" value="Обновить">
-      <input type="submit" value="Удалить"><br><br>
+      <button id="add_disease" name = "add_disease" onclick="addDisease()">Добавить*</button>
+      <button id="update_disease" name = "update_disease" onclick="updateDisease()">Обновить**</button>
+      <button id="delete_disease" name = "delete_disease" onclick="deleteDisease()">Удалить**</button><br><br>
+
     </form>
 
-    <input type="submit" value="Показать всё">
+    <button id="show_diseases" onclick="showDiseases()">Показать все должности</button><br><br>
 
+    <p>* Идентификатор должности при добавлении создается автоматически.</p>
+    <p>** Обновление и удаление происходит по идентификатору должности.</p>
   </body>
 </html>
