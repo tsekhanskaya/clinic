@@ -69,30 +69,83 @@ function showElements(elements) {
 }
 
 function addElement(elements) {
-  let  element;
 
-  if (elements === "employees") {
-    let resultBooksId = []
-    let employee = document.getElementById('employee_id').value
+}
+
+function updateElement(elements) {
+  let  element;
+  let element_id;
+
+  if (elements === "employees"){
+
+    element_id = document.getElementById('employee_id').value;
 
     element = {
-      employee_id: employee,
-      fullname: document.getElementById('employee_fullname').value,
-      specialization: document.getElementById('employee_specialization').value,
-      position: document.getElementById('employee_position').value
+      "fullname": document.getElementById('employee_fullname').value,
+      "specialization": document.getElementById('employee_specialization').value,
+      "position": document.getElementById('employee_position').value
+    }
+  }
+
+  if (elements === "specializations"){
+    element_id = document.getElementById('specialization_id').value;
+
+    element = {
+      "specialty": document.getElementById('specialization_name').value
+    }
+  }
+
+  if (elements === "positions"){
+    element_id = document.getElementById('position_id').value;
+
+    element = {
+      "post": document.getElementById('position_name').value
+    }
+  }
+
+  if (elements === "patients"){
+    element_id = document.getElementById('patient_id').value;
+
+    element = {
+      "last_name": document.getElementById('patient_lastname').value,
+      "first_name": document.getElementById('patient_firstname').value,
+      "patronymic": document.getElementById('patient_patronymic').value,
+      "birthdate": document.getElementById('position_name').value,
+      "phone": document.getElementById('patient_phone').value
+    }
+  }
+
+  if (elements === "diseases"){
+    element_id = document.getElementById('disease_id').value;
+
+    element = {
+      "code": document.getElementById('disease_code').value,
+      "disease_name": document.getElementById('disease_name').value,
+    }
+  }
+
+  if (elements === "medical_reports"){
+    element_id = document.getElementById('medical_report_id').value;
+
+    element = {
+      "data_examination": document.getElementById('medical_report_date').value,
+      "sick_leave": document.getElementById('medical_report_sick_leave').value,
+      "prescribing": document.getElementById('medical_report_prescribing').value,
+      "recommendation": document.getElementById('medical_report_recommendation').value,
+      "patient_id": document.getElementById('medical_report_patient').value,
+      "employee_id": document.getElementById('medical_report_employee').value,
+      "disease_id": document.getElementById('medical_report_disease').value
     }
   }
 
   $.ajax({
-    url: 'http://localhost:3000/' + elements,
-    method: 'post',
+    url: 'http://localhost:3000/' + elements + '/' + element_id,
+    method: 'put',
     dataType: 'json',
     data: element
     }
   )
 }
-
-function updateElement(elements) {}
 
 function deleteElement(elements) {
   let element_id;
