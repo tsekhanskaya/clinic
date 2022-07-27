@@ -36,7 +36,7 @@ function getelements(elements) {
                 }
                 if (elements === 'patients') {
                     let elements = ""
-                    data.forEach(element => {
+                    data.forEach(element => 
                     {
                         elements += "Идентификатор пациента: " + element.id +
                                     "; Фамилия: " + element.last_name +
@@ -45,7 +45,7 @@ function getelements(elements) {
                                     "; Дата рождения: "+element.birthdate+
                                     "; Телефон: "+element.phone".\n"
                     }
-                  })
+                    )
                   alert(elements)
                 }
                 if (elements === 'disease') {

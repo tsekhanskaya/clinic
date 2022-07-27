@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class SpecializationsController < ApplicationController
-  before_action :set_specialization, only: %i[ show update destroy ]
+  before_action :set_specialization, only: %i[show update destroy]
 
   # GET /specializations
   def index
@@ -28,7 +30,7 @@ class SpecializationsController < ApplicationController
   def update
     @specialization.assign_attributes(specialization_params)
 
-    if @specialization.save 
+    if @specialization.save
       render json: @specialization
     else
       render json: @specialization.errors, status: :unprocessable_entity
@@ -51,13 +53,14 @@ class SpecializationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_specialization
-      @specialization = Specialization.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def specialization_params
-      params.require(:specialization).permit(:specialty)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_specialization
+    @specialization = Specialization.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def specialization_params
+    params.require(:specialization).permit(:specialty)
+  end
 end

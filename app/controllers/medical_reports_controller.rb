@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class MedicalReportsController < ApplicationController
-  before_action :set_medical_report, only: %i[ show update destroy ]
+  before_action :set_medical_report, only: %i[show update destroy]
 
   # GET /medical_reports
   def index
@@ -40,13 +42,14 @@ class MedicalReportsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_medical_report
-      @medical_report = MedicalReport.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def medical_report_params
-      params.require(:medical_report).permit(:data_examination, :sick_leave, :prescribing, :recommendation)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_medical_report
+    @medical_report = MedicalReport.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def medical_report_params
+    params.require(:medical_report).permit(:data_examination, :sick_leave, :prescribing, :recommendation)
+  end
 end

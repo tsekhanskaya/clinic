@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MedicalReportSerializer < ActiveModel::Serializer
   attributes :id, :data_examination, :sick_leave, :prescribing, :recommendation
   has_one :employee

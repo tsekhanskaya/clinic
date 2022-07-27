@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class PositionsController < ApplicationController
-  before_action :set_position, only: %i[ show update destroy ]
+  before_action :set_position, only: %i[show update destroy]
 
   # GET /positions
   def index
@@ -35,20 +37,20 @@ class PositionsController < ApplicationController
     end
   end
 
-
   # DELETE /positions/1
   def destroy
     @position.destroy
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_position
-      @position = Position.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def position_params
-      params.require(:position).permit(:post)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_position
+    @position = Position.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def position_params
+    params.require(:position).permit(:post)
+  end
 end

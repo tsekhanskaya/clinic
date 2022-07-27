@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class PatientsController < ApplicationController
-  before_action :set_patient, only: %i[ show update destroy ]
+  before_action :set_patient, only: %i[show update destroy]
 
   # GET /patients
   def index
@@ -26,9 +28,8 @@ class PatientsController < ApplicationController
 
   # PATCH/PUT /patients/1
   def update
-
     @patient.assign_attributes(patient_params)
-    if @patient.save  #update(patient_params)
+    if @patient.save # update(patient_params)
       render json: @patient
     else
       render json: @patient.errors, status: :unprocessable_entity
@@ -41,14 +42,15 @@ class PatientsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_patient
-      @patient = Patient.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def patient_params
-      params.require(:patient).permit(:last_name, :first_name, :patronymic, :birthdate, :phone)
-      # params.permit(:last_name, :first_name, :patronymic, :birthdate, :phone)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_patient
+    @patient = Patient.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def patient_params
+    params.require(:patient).permit(:last_name, :first_name, :patronymic, :birthdate, :phone)
+    # params.permit(:last_name, :first_name, :patronymic, :birthdate, :phone)
+  end
 end
