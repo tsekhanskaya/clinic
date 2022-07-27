@@ -67,3 +67,47 @@ function showElements(elements) {
       }
     )
 }
+
+function addElement(elements) {
+  let  element;
+
+  if (elements === "employees") {
+    let resultBooksId = []
+    let employee = document.getElementById('employee_id').value
+
+    element = {
+      employee_id: employee,
+      fullname: document.getElementById('employee_fullname').value,
+      specialization: document.getElementById('employee_specialization').value,
+      position: document.getElementById('employee_position').value
+    }
+  }
+
+  $.ajax({
+    url: 'http://localhost:3000/' + elements,
+    method: 'post',
+    dataType: 'json',
+    data: element
+    }
+  )
+}
+
+function updateElement(elements) {}
+
+function deleteElement(elements) {
+  let element_id;
+  if (elements === "employees") element_id = document.getElementById('employee_id').value;
+  if (elements === "specializations") element_id = document.getElementById('specialization_id').value;
+  if (elements === "positions") element_id = document.getElementById('position_id').value;
+  if (elements === "patients") element_id = document.getElementById('patient_id').value;
+  if (elements === "diseases") element_id = document.getElementById('disease_id').value;
+  if (elements === "medical_reports") element_id = document.getElementById('medical_report_id').value;
+
+
+  $.ajax({
+    url: 'http://localhost:3000/' + elements + "/" + element_id,
+    method: 'delete',
+    dataType: 'json'
+    }
+  )
+}
