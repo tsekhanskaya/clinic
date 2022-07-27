@@ -15,32 +15,39 @@
     <h1>Медицинский отчет</h1>
     <p>Внесите данные для добавления, обновления или удаления.</p>
     <form>
-      <label for="fname">Дата записи:</label><br>
-      <input type="date" id="born_on" name="born_on"/><br><br>
+      <label for="medical_report_id">Идентификатор медицинского отчета:</label><br>
+      <input type="text" id="medical_report_id" name="medical_report_id" placeholder="1"><br><br>
 
-      <label for="fname">Наличие больничного:</label><br>
-      <input type="text" id="fname" name="fname"><br><br>
+      <label for="medical_report_date">Дата записи:</label><br>
+      <input type="date" id="medical_report_date" name="medical_report_date"/><br><br>
 
-      <label for="fname">Назначенные медицинские препараты:</label><br>
-      <input type="text" id="fname" name="fname" placeholder="1"><br><br>
+      <label for="medical_report_sick_leave">Наличие больничного:</label><br>
+      <input type="text" id="medical_report_sick_leave" name="medical_report_sick_leave" placeholder="Больничный с --/-- по --/--"><br><br>
 
-      <label for="fname">Рекомендация использования препаратов:</label><br>
-      <input type="text" id="fname" name="fname"><br><br>
+      <label for="medical_report_prescribing">Назначенные медицинские препараты:</label><br>
+      <input type="text" id="medical_report_prescribing" name="medical_report_prescribing" placeholder="Парацетомол, ..."><br><br>
 
-      <label for="fname">Данные пациета:</label><br>
-      <input type="text" id="fname" name="fname"><br><br>
+      <label for="medical_report_recommendation">Рекомендация использования препаратов:</label><br>
+      <input type="text" id="medical_report_recommendation" name="medical_report_recommendation" placeholder="Парацетомол: внутрь, до еды, "><br><br>
 
-      <label for="fname">Данные сотрудника:</label><br>
-      <input type="text" id="fname" name="fname"><br><br>
+      <label for="fname">Идентификатор клиента:</label><br>
+      <input type="text" id="fname" name="fname" placeholder="3"><br><br>
 
-      <label for="fname">Данные диагноза:</label><br>
-      <input type="text" id="fname" name="fname"><br><br>
+      <label for="fname">Идентификатор сотрудника:</label><br>
+      <input type="text" id="fname" name="fname" placeholder="2"><br><br>
 
-      <input type="submit" value="Добавить">
-      <input type="submit" value="Обновить">
-      <input type="submit" value="Удалить"><br><br>
+      <label for="fname">Идентификатор диагноза:</label><br>
+      <input type="text" id="fname" name="fname" placeholder="3"><br><br>
+
+      <button id="add_medical_report" name = "add_medical_report" onclick="addMedicalReport()">Добавить *</button>
+      <button id="update_medical_report" name = "update_medical_report" onclick="updateMedicalReport()">Обновить **</button>
+      <button id="delete_medical_report" name = "delete_medical_report" onclick="deleteMedicalReport()">Удалить **</button><br><br>
+
     </form>
 
-    <input type="submit" value="Показать всё">
+    <button id="show_medical_reports" onclick="showMedicalReports()">Показать все должности</button><br><br>
+    <p>* Идентификатор должности при добавлении создается автоматически.</p>
+    <p>** Обновление и удаление происходит по идентификатору должности.</p>
+
   </body>
 </html>
