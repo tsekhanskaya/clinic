@@ -9,7 +9,7 @@
           integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
           crossorigin="anonymous"></script>
   <!-- после jQuery свой скрипт, зависящий от jQuery -->
-  <script src="script.js" charset="utf-8"></script>
+  <script defer src="script.js" charset="utf-8"></script>
   </head>
   <body>
     <h1>Медицинский отчет</h1>
@@ -45,7 +45,7 @@
 
     </form>
 
-    <button id="show_medical_reports" onclick="showMedicalReports()">Показать все должности</button><br><br>
+    <button id="show_medical_reports" onclick="showElements('medical_reports')">Показать все отчеты</button><br><br>
     <p>* Идентификатор должности при добавлении создается автоматически.</p>
     <p>** Обновление и удаление происходит по идентификатору должности.</p>
 
