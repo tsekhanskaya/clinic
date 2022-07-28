@@ -136,7 +136,7 @@ function addElement(elements) {
   }
 
   $.ajax({
-    url: 'http://localhost:3000/' + elements + '/' + element_id,
+    url: 'http://localhost:3000/' + elements,
     method: 'post',
     dataType: 'json',
     data: element
@@ -145,7 +145,7 @@ function addElement(elements) {
 }
 
 function updateElement(elements) {
-  let  element;
+  let element;
   let element_id;
 
   if (elements === "employees"){
