@@ -7,7 +7,7 @@ function showElements(elements) {
               data.forEach(element => {
                 elements += "Идентификатор сотрудника: " + element.id +
                             ";\nФИО сотрудника: " + element.fullname +
-                            ";\nИдентификатор должности: " + JSON.stringify(element.position_id) +
+                            ";\nИдентификатор должности: " + element.position_id +
                             ";\nИдентификатор специализации: " + element.specialization_id + ".\n\n";
                })
             return alert(elements);
@@ -78,8 +78,8 @@ function addElement(elements) {
     element = {
       "employee": {
         "fullname": document.getElementById('employee_fullname').value,
-        "specialization": document.getElementById('employee_specialization').value,
-        "position": document.getElementById('employee_position').value
+        "position_id": document.getElementById('employee_position').value,
+        "specialization_id": document.getElementById('employee_specialization').value
       }
     }
   }
@@ -154,8 +154,8 @@ function updateElement(elements) {
     element = {
       "employee": {
         "fullname": document.getElementById('employee_fullname').value,
-        "specialization": document.getElementById('employee_specialization').value,
-        "position": document.getElementById('employee_position').value
+        "position_id": document.getElementById('employee_position').value,
+        "specialization_id": document.getElementById('employee_specialization').value
       }
     }
   }
